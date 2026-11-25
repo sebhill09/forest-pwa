@@ -1,5 +1,7 @@
 # Forest — personal focus PWA
 
+**Live:** https://sebhill09.github.io/forest-pwa/ — open in Safari on iPhone, then Share → Add to Home Screen.
+
 An unofficial, personal-use clone of the Forest focus timer. Plant a tree, stay in the app while it grows, and build a forest out of finished focus sessions. If you leave, the tree withers.
 
 Built as a static, offline-capable PWA — no build step, no backend, no account.
