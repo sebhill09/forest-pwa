@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2F6A4C"/>
+      <stop offset=".55" stop-color="#1D4934"/>
+      <stop offset="1" stop-color="#122F22"/>
+    </linearGradient>
+    <linearGradient id="sun" x1=".2" y1="0" x2=".8" y2="1">
+      <stop offset="0" stop-color="#FCF3DE"/>
+      <stop offset="1" stop-color="#EBCFA1"/>
+    </linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2E6747"/>
+      <stop offset="1" stop-color="#173D2A"/>
+    </linearGradient>
+    <linearGradient id="crown" x1="440" y1="300" x2="620" y2="650" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4E9470"/>
+      <stop offset="1" stop-color="#2C6647"/>
+    </linearGradient>
+    <linearGradient id="crownIn" x1="440" y1="320" x2="600" y2="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6AAC80"/>
+      <stop offset="1" stop-color="#3B7A55"/>
+    </linearGradient>
+    <linearGradient id="bark" x1="470" y1="600" x2="560" y2="860" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7D5539"/>
+      <stop offset="1" stop-color="#4E3220"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#sky)"/>
+  <circle cx="512" cy="466" r="318" fill="url(#sun)"/>
+  <path d="M0 852C168 814 332 868 512 860C700 852 872 812 1024 848L1024 1024L0 1024Z" fill="url(#hill)"/>
+  <ellipse cx="512" cy="858" rx="176" ry="20" fill="#0C2417" opacity=".2"/>
+  <path d="M452 858C460 806 470 760 480 716C488 678 492 630 494 582L530 582C532 630 536 678 544 720C554 764 566 810 572 858Z" fill="url(#bark)"/>
+  <path d="M498 648C476 630 452 612 430 600" stroke="#5A3A26" stroke-width="26" stroke-linecap="round" fill="none"/>
+  <path d="M526 664C552 646 576 626 596 612" stroke="#5A3A26" stroke-width="22" stroke-linecap="round" fill="none"/>
+  <path d="M478 700C482 742 482 790 478 830" stroke="#9A7050" stroke-width="10" stroke-linecap="round" fill="none" opacity=".45"/>
+  <circle cx="430" cy="478" r="112" fill="url(#crown)"/>
+  <circle cx="512" cy="392" r="108" fill="url(#crown)"/>
+  <circle cx="604" cy="474" r="98" fill="url(#crown)"/>
+  <circle cx="512" cy="548" r="122" fill="url(#crown)"/>
+  <circle cx="452" cy="452" r="72" fill="url(#crownIn)"/>
+  <circle cx="536" cy="366" r="66" fill="url(#crownIn)"/>
+  <circle cx="600" cy="452" r="58" fill="url(#crownIn)"/>
+  <circle cx="530" cy="528" r="70" fill="url(#crownIn)"/>
+  <circle cx="398" cy="418" r="44" fill="#75B489"/>
+  <circle cx="472" cy="330" r="40" fill="#75B489"/>
+  <circle cx="590" cy="416" r="32" fill="#75B489"/>
+  <ellipse cx="452" cy="372" rx="34" ry="20" fill="#A7D2A9" opacity=".55" transform="rotate(-26 452 372)"/>
+  <ellipse cx="512" cy="308" rx="22" ry="12" fill="#A7D2A9" opacity=".5" transform="rotate(-6 512 308)"/>
+  <ellipse cx="640" cy="490" rx="18" ry="10" fill="#3B7A55" opacity=".5" transform="rotate(20 640 490)"/>
+  <path d="M430 852C428 838 424 828 418 820" stroke="#4E8A63" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M440 854C442 840 448 830 454 824" stroke="#4E8A63" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M590 854C592 840 596 830 602 822" stroke="#3A7050" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <g opacity=".75">
+    <path d="M806 296C812 284 824 280 832 288C826 300 814 304 806 296Z" fill="#F4E4C2"/>
+    <path d="M762 356C768 346 778 344 784 350C778 360 768 364 762 356Z" fill="#F4E4C2" opacity=".7"/>
+  </g>
+</svg>

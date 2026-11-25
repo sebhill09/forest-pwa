@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forest — tree artwork proof sheet</title>
+<style>
+  :root {
+    --cream: #F7F4E9;
+    --card: #FCFAF2;
+    --ink: #26362B;
+    --muted: #7C8679;
+    --line: rgba(38, 54, 43, .13);
+    --accent: #3E7A55;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--cream); color: var(--ink); }
+  body {
+    font: 14px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 0 48px;
+  }
+  header {
+    padding: 44px 56px 22px;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 10px;
+  }
+  h1 {
+    font: 400 40px/1.05 Georgia, "Times New Roman", serif;
+    letter-spacing: -.015em; margin: 0;
+  }
+  header .right { text-align: right; color: var(--muted); font-size: 12px; }
+  header .right strong { display: block; color: var(--ink); font-size: 22px; font-weight: 500; letter-spacing: -.01em; }
+  .section-head {
+    display: flex; align-items: baseline; gap: 14px;
+    padding: 30px 56px 2px;
+  }
+  .section-head h2 {
+    font: 400 19px/1.2 Georgia, serif; margin: 0;
+  }
+  .section-head span { font-size: 12px; color: var(--muted); }
+  .gallery {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 18px; padding: 18px 56px 8px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 12px 14px 10px;
+    box-shadow: 0 1px 0 rgba(255,255,255,.7) inset, 0 6px 18px rgba(56, 68, 48, .045);
+  }
+  .card-top { display: flex; align-items: baseline; gap: 8px; padding: 0 2px; }
+  .idx { font-size: 10px; color: #A6AE9E; font-variant-numeric: tabular-nums; }
+  .card h3 { font: 500 15px/1.2 -apple-system, "SF Pro Text", sans-serif; margin: 0; letter-spacing: -.01em; flex: 1; }
+  .cost {
+    font-size: 10px; letter-spacing: .04em; color: var(--accent);
+    border: 1px solid rgba(62,122,85,.28); border-radius: 999px; padding: 2px 7px;
+    background: rgba(62,122,85,.06);
+  }
+  .art { height: 260px; display: flex; align-items: center; justify-content: center; }
+  .art svg { width: 200px; height: 260px; display: block; }
+  .card-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px dashed var(--line); margin-top: 4px; padding: 8px 2px 0;
+  }
+  .mini { display: flex; align-items: flex-end; gap: 9px; }
+  .mini .mini-art svg { width: 80px; height: 104px; display: block; }
+  .mini small { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: #A6AE9E; padding-bottom: 4px; }
+  .swatches { display: flex; gap: 4px; }
+  .swatches i { width: 9px; height: 9px; border-radius: 50%; display: block; box-shadow: 0 0 0 1px rgba(0,0,0,.05) inset; }
+  .strip-wrap { padding: 10px 56px 6px; }
+  .strip {
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+    padding: 14px 18px; display: flex; align-items: flex-end; justify-content: space-between;
+  }
+  .strip figure { margin: 0; text-align: center; }
+  .strip svg { width: 80px; height: 104px; display: block; }
+  .strip figcaption { font-size: 9.5px; color: var(--muted); margin-top: 2px; letter-spacing: .02em; }
+  .icon-section { display: flex; gap: 36px; padding: 12px 56px 0; align-items: stretch; }
+  .icon-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+    padding: 18px; display: flex; gap: 26px; align-items: flex-end;
+  }
+  .icon-card figure { margin: 0; text-align: center; }
+  .icon-card img.big { width: 180px; height: 180px; display: block; border-radius: 6px; }
+  .icon-card img.small { width: 60px; height: 60px; display: block; border-radius: 14px; }
+  .icon-card figcaption { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+  .notes { flex: 1; max-width: 420px; align-self: center; }
+  .notes p { margin: 0 0 8px; color: var(--muted); font-size: 12.5px; }
+  .notes p strong { color: var(--ink); font-weight: 500; }
+  .palette-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  footer { padding: 26px 56px 0; color: #9AA392; font-size: 11px; }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <p class="eyebrow">Forest PWA · artwork proof</p>
+    <h1>Trees for quiet hours</h1>
+  </div>
+  <div class="right"><strong>12 species</strong>hand-drawn SVG · no raster</div>
+</header>
+
+<div class="section-head"><h2>Species gallery</h2><span>200px display · 80px thumbnail · palette</span></div>
+<main class="gallery" id="gallery"></main>
+
+<div class="section-head"><h2>Silhouette check</h2><span>all twelve at 80px, same baseline</span></div>
+<div class="strip-wrap"><div class="strip" id="strip"></div></div>
+
+<div class="section-head"><h2>App icon</h2><span>1024px master, full-bleed</span></div>
+<section class="icon-section">
+  <div class="icon-card">
+    <figure>
+      <img class="big" src="../icons/icon.svg" alt="Forest app icon at 180 pixels">
+      <figcaption>180 px</figcaption>
+    </figure>
+    <figure>
+      <img class="small" src="../icons/icon.svg" alt="Forest app icon at 60 pixels">
+      <figcaption>60 px</figcaption>
+    </figure>
+  </div>
+  <div class="notes">
+    <p><strong>Deep forest green, cream sun, one oak.</strong> Shapes stay large and legible when the icon is masked down to a home-screen tile.</p>
+    <p>Safe margin: artwork sits inside the central 76% of the square; the background bleeds to every edge.</p>
+    <div class="palette-row" id="icon-palette"></div>
+  </div>
+</section>
+
+<footer>Original artwork, CC0 · forest-pwa · generated proof sheet</footer>
+
+<script src="../js/trees.js"></script>
+<script>
+  const PALETTES = {
+    oak:      ['#275C3B', '#33704A', '#428A58', '#5A9F68', '#8CC48C'],
+    maple:    ['#AD4A20', '#C25A26', '#E07C2F', '#F4A046', '#FFD27C'],
+    pine:     ['#17452F', '#1F5138', '#2A6646', '#3F8058', '#6FA678'],
+    birch:    ['#8DA952', '#A2BC60', '#BBD172', '#D4E193', '#F0F6C8'],
+    cherry:   ['#C4688D', '#DC85A4', '#F0A3BC', '#F9C4D2', '#FFE9F0'],
+    willow:   ['#7F9E72', '#93B084', '#A9C498', '#C2D6AE', '#E2EDCE'],
+    baobab:   ['#5E7B42', '#6F8E4C', '#84A45A', '#9FBE70', '#C9DCA0'],
+    palm:     ['#256B47', '#2E7A50', '#3F9560', '#57AE72', '#8ACB94'],
+    bamboo:   ['#4B8046', '#5B9350', '#6FA85C', '#8CC372', '#C4E3A0'],
+    cactus:   ['#3E7350', '#4C895C', '#5E9E6A', '#7DBB85', '#ACD6A6'],
+    sequoia:  ['#244E37', '#2D5D42', '#3A7350', '#4D8A5B', '#7FAA7C'],
+    bonsai:   ['#2C5C42', '#386E4E', '#48855C', '#5F9C70', '#93BF95']
+  };
+  const ICON_PALETTE = ['#2F6A4C', '#1D4934', '#122F22', '#FCF3DE', '#EBCFA1', '#4E9470', '#2C6647', '#7D5539'];
+
+  const gallery = document.getElementById('gallery');
+  const strip = document.getElementById('strip');
+
+  window.TREE_SPECIES.forEach((s, i) => {
+    const sw = (PALETTES[s.id] || []).map(c => `<i style="background:${c}"></i>`).join('');
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card-top">
+        <span class="idx">${String(i + 1).padStart(2, '0')}</span>
+        <h3>${s.name}</h3>
+        <span class="cost">${s.cost === 0 ? 'Free' : s.cost}</span>
+      </div>
+      <div class="art">${s.svg}</div>
+      <div class="card-foot">
+        <div class="mini">
+          <div class="mini-art">${s.svg}</div>
+          <small>80 px</small>
+        </div>
+        <div class="swatches">${sw}</div>
+      </div>`;
+    gallery.appendChild(card);
+
+    const fig = document.createElement('figure');
+    fig.innerHTML = `${s.svg}<figcaption>${s.name}</figcaption>`;
+    strip.appendChild(fig);
+  });
+
+  document.getElementById('icon-palette').innerHTML =
+    ICON_PALETTE.map(c => `<i style="background:${c};width:14px;height:14px;border-radius:50%;display:block;box-shadow:0 0 0 1px rgba(0,0,0,.06) inset"></i>`).join('');
+</script>
+</body>
+</html>

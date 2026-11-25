@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Forest — Focus Timer</title>
+<meta name="description" content="A personal Forest-style focus timer. Plant a tree, stay focused, and grow your forest.">
+<meta name="theme-color" content="#F7F4E9">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Forest">
+<meta name="application-name" content="Forest">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <main id="view" class="view" aria-live="polite"></main>
+  <nav class="tabbar" aria-label="Main navigation">
+    <button class="tab" data-action="tab" data-tab="focus" aria-label="Focus">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7"/><path d="M12 14c-4.5 0-7-2.8-7-6.5C9.5 7.5 12 9 12 14Z"/><path d="M12 11c0-4.5 2.5-7 7-7 0 4.5-2.5 7-7 7Z"/></svg>
+      <span>Focus</span>
+    </button>
+    <button class="tab" data-action="tab" data-tab="forest" aria-label="Forest">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21v-3"/><path d="M7 18l-3.5-4h7L7 10 3.5 6h7L7 2"/><path d="M17 21v-4"/><path d="M17 17l-3-3.5h6L17 10l-3-3h6l-3-4"/></svg>
+      <span>Forest</span>
+    </button>
+    <button class="tab" data-action="tab" data-tab="shop" aria-label="Tree shop">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <span>Shop</span>
+    </button>
+    <button class="tab" data-action="tab" data-tab="stats" aria-label="Progress">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/></svg>
+      <span>Progress</span>
+    </button>
+  </nav>
+</div>
+<div id="layers"></div>
+<div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+<script src="js/trees.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
