@@ -332,6 +332,26 @@
     wakeLock = null;
   }
 
+  function enterFullscreen() {
+    try {
+      const el = document.documentElement;
+      const request = el.requestFullscreen || el.webkitRequestFullscreen;
+      if (!request || document.fullscreenElement) return;
+      const result = request.call(el, { navigationUI: 'hide' });
+      if (result && result.catch) result.catch(() => {});
+    } catch (e) { /* iOS Safari has no element fullscreen */ }
+  }
+
+  function exitFullscreen() {
+    try {
+      if (document.fullscreenElement && document.exitFullscreen) {
+        document.exitFullscreen().catch(() => {});
+      } else if (document.webkitFullscreenElement && document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    } catch (e) {}
+  }
+
   /* ---------------- session engine ---------------- */
   function startSession() {
     if (state.active) return;
@@ -353,6 +373,7 @@
     playPop();
     ui.result = null;
     render();
+    enterFullscreen();
     startTicker();
     requestWakeLock();
   }
@@ -387,6 +408,7 @@
     save();
     stopTicker();
     releaseWakeLock();
+    exitFullscreen();
     playChime();
     ui.result = { type: 'done', session, coins: session.coins, achievements: newly };
     render();
@@ -402,6 +424,7 @@
     save();
     stopTicker();
     releaseWakeLock();
+    exitFullscreen();
     ui.result = { type: 'dead', session: s, reason };
     render();
   }
@@ -466,6 +489,10 @@
       </div>
       ${active ? '' : '<div class="scene-hint">Stay in the app while your tree grows</div>'}
       <div class="progress-line"><i id="scene-progress" style="width:${active ? Math.round(progress * 100) : 0}%"></i></div>
+      ${active ? `<div class="immersive-hud">
+        <span class="imm-meta"><span class="pulse-dot"></span>${state.active.tag ? esc(state.active.tag) : 'Focusing'}</span>
+        <button class="imm-abandon" data-action="abandon">Give up</button>
+      </div>` : ''}
     </div>`;
   }
 
@@ -525,12 +552,17 @@
     const progress = active
       ? clamp((Date.now() - active.startedAt) / (active.endsAt - active.startedAt), 0, 1)
       : 0;
+    if (active) {
+      return `<section class="screen focus-screen immersive-screen">
+        ${sceneHTML(sp, active, progress)}
+      </section>`;
+    }
     const minutes = ui.duration;
     const potential = Math.max(1, Math.round(minutes)) + (minutes >= 60 ? 10 : 0);
     return `<section class="screen focus-screen">
       ${topbar()}
-      ${sceneHTML(sp, active, progress)}
-      ${active ? activeControls() : idleControls(potential)}
+      ${sceneHTML(sp, null, 0)}
+      ${idleControls(potential)}
     </section>`;
   }
 
@@ -912,6 +944,7 @@
     else if (ui.tab === 'stats') html = statsView();
     else html = focusView();
     view.innerHTML = html;
+    document.body.classList.toggle('immersive', !!state.active);
 
     document.querySelectorAll('.tab').forEach((t) => {
       const on = t.dataset.tab === ui.tab;
@@ -1013,6 +1046,7 @@
     ui.hiddenAt = null;
     stopTicker();
     releaseWakeLock();
+    exitFullscreen();
     save();
     render();
     toast('Forest reset. A fresh start.');

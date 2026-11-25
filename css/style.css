@@ -777,3 +777,94 @@ svg { display: block; }
     transition-duration: .001ms !important;
   }
 }
+
+/* ---------- immersive focus mode ---------- */
+body.immersive { background: #122F22; }
+body.immersive .tabbar { display: none; }
+body.immersive .view { height: 100dvh; }
+
+body.immersive .immersive-screen {
+  height: 100dvh;
+  min-height: 100dvh;
+  padding: 0;
+  overflow: hidden;
+  background: var(--cream);
+}
+body.immersive .immersive-screen .scene {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 520px;
+  height: 100dvh;
+  min-height: 100dvh;
+  border-radius: 0;
+  box-shadow: none;
+}
+.immersive-screen .tree-slot {
+  width: min(66vw, 340px);
+  max-width: none;
+  bottom: 18%;
+}
+.immersive-screen .clock-wrap {
+  top: calc(20px + var(--safe-t));
+  gap: 8px;
+}
+.immersive-screen .clock {
+  font-size: clamp(46px, 13vw, 64px);
+  padding: 12px 24px 10px;
+  border-radius: 24px;
+}
+.immersive-screen .clock-label { font-size: 9px; }
+.immersive-screen .scene-hint { display: none; }
+.immersive-screen .progress-line { height: 4px; }
+
+.immersive-hud {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(18px + var(--safe-b));
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 18px;
+}
+.imm-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 58%;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(250, 248, 241, .6);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: rgba(30, 70, 50, .72);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.imm-meta .pulse-dot { width: 7px; height: 7px; }
+.imm-meta .pulse-dot::after { inset: -4px; }
+.imm-abandon {
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: rgba(250, 248, 241, .55);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: rgba(30, 70, 50, .6);
+  font-size: 11px;
+  font-weight: 600;
+}
+.imm-abandon:active { background: rgba(250, 248, 241, .8); }
+.scene[data-daypart="night"] .imm-meta,
+.scene[data-daypart="night"] .imm-abandon {
+  color: rgba(240, 244, 224, .82);
+  background: rgba(20, 40, 32, .45);
+}

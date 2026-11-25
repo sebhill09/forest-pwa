@@ -30,6 +30,7 @@ The app is a static site. Create a public GitHub repository, upload this folder 
 ## Features
 
 - Focus timer with plant-a-tree growth stages, sprout → mature
+- Immersive full-screen focus mode — just the timer, the tree, and a quiet “Give up”
 - Leaving the app during a session withers the tree (strict mode kills instantly)
 - 12 original tree species, unlockable with coins
 - Persistent forest meadow with tappable tree history

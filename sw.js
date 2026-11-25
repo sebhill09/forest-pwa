@@ -1,5 +1,5 @@
 /* Forest PWA service worker — offline-first app shell */
-const CACHE = 'forest-pwa-v4';
+const CACHE = 'forest-pwa-v5';
 const ASSETS = [
   './',
   './index.html',
